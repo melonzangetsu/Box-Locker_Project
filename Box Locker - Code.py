@@ -15,8 +15,8 @@ def onClick_Decrease(event=None):
     counter.set(counter.get() - 1)
 
 Tkinter.Label(root, textvariable=counter).pack()
-Tkinter.Button(root, text="Increase", command=onClick_Increase, fg="dark green", bg = "white").pack()
-Tkinter.Button(root, text="Decrease", command=onClick_Decrease, fg="dark green", bg = "white").pack()
+Tkinter.Button(root, text="Increase", command=onClick_Increase, fg="red", bg = "white").pack()
+Tkinter.Button(root, text="Decrease", command=onClick_Decrease, fg="blue", bg = "white").pack()
 
     
 
