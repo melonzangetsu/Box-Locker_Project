@@ -17,9 +17,20 @@ label.place(x = 350, y = 5)
 
 #------------------------------------------------------------------------------------------------------#
 ''' Zone Menu '''
-Label(root, text=strftime('Today is %A %d %B %Y')).place(x = 100, y = 55)
-Label(root, text=strftime('You open program at %H:%M')).place(x = 100, y = 75)
+Label(root, text=strftime('Today : %A %d %B %Y')).place(x = 100, y = 55)
 Label(root, text=strftime("Setting Time : ")).place(x = 390, y = 55)
+
+def update_timeText():
+    # Get the current time, note you can change the format as you wish
+    current = strftime("Now time : %H : %M : %S")
+    # Update the timeText Label box with the current time
+    time.config(text=current)
+    # Call the update_timeText() function after 1 second
+    root.after(1000, update_timeText)
+# Create a timeText Label (a text box)
+time = Label(root)
+time.pack(pady=90)
+update_timeText()
 
 #------------------------------------------------------------------------------------------------------#
 ''' Button Skip '''
@@ -31,7 +42,6 @@ Label(root, text=strftime("Setting Time : ")).place(x = 390, y = 55)
 #        counter.set(counter.get() - 1)
 
 day = IntVar()
-print type(day)
 def onClick_Increaseday(event=None):
         day.set(day.get() + 1)
 
@@ -62,12 +72,12 @@ Label(root, textvariable=year).place(x = 570, y = 55)
 #Label(root, textvariable=counter).place(x = 645, y = 55)
 #Button(root, text="<- ", command=onClick_Decrease, fg="red", bg = "black").place(x = 625, y = 80)
 #Button(root, text=" ->", command=onClick_Increase, fg="red", bg = "black").place(x = 650, y = 80)
-Button(root, text="v", command=onClick_Decreaseday).place(x = 500, y = 65, width = 13, height = 13)
-Button(root, text="^", command=onClick_Increaseday).place(x = 500, y = 55, width = 13, height = 13)
-Button(root, text="v", command=onClick_Decreasemonth).place(x = 550, y = 65, width = 13, height = 13)
-Button(root, text="^", command=onClick_Increasemonth).place(x = 550, y = 55, width = 13, height = 13)
-Button(root, text="v", command=onClick_Decreaseyear).place(x = 600, y = 65, width = 13, height = 13)
-Button(root, text="^", command=onClick_Increaseyear).place(x = 600, y = 55, width = 13, height = 13)
+Button(root, text="v", command=onClick_Decreaseday).place(x = 500, y = 65, width = 12, height = 12)
+Button(root, text="^", command=onClick_Increaseday).place(x = 500, y = 54, width = 12, height = 12)
+Button(root, text="v", command=onClick_Decreasemonth).place(x = 550, y = 65, width = 12, height = 12)
+Button(root, text="^", command=onClick_Increasemonth).place(x = 550, y = 54, width = 12, height = 12)
+Button(root, text="v", command=onClick_Decreaseyear).place(x = 600, y = 65, width = 12, height = 12)
+Button(root, text="^", command=onClick_Increaseyear).place(x = 600, y = 54, width = 12, height = 12)
 
 #------------------------------------------------------------------------------------------------------#
 ''' Zone Blocks '''
