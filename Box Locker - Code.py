@@ -15,26 +15,56 @@ label.place(x = 350, y = 5)
 
 #------------------------------------------------------------------------------------------------------#
 ''' Zone Menu '''
-day = strftime("%A")
-date = strftime("%d")
-month = strftime("%B")
-year = strftime("%Y")
 Label(root, text=strftime('Today is %A %d %B %Y')).place(x = 100, y = 55)
 Label(root, text=strftime('You open program at %H:%M')).place(x = 100, y = 75)
+Label(root, text=strftime("Setting Time : ")).place(x = 390, y = 55)
 
 #------------------------------------------------------------------------------------------------------#
 ''' Button Skip '''
-counter = IntVar()
-def onClick_Increase(event=None):
-    counter.set(counter.get() + 1)
+''' Button Skip '''
+#counter = IntVar()
+#def onClick_Increase(event=None):
+#    counter.set(counter.get() + 1)
+#def onClick_Decrease(event=None):
+#    if counter.get() >= 1:
+#        counter.set(counter.get() - 1)
 
-def onClick_Decrease(event=None):
-    if counter.get() >= 1:
-        counter.set(counter.get() - 1)
+day = int(strftime("%H"))
+def onClick_Increaseday(event=None):
+    day.set(day.get() + 1)
 
-Label(root, textvariable=counter).place(x = 645, y = 55)
-Button(root, text="<- ", command=onClick_Decrease, fg="red", bg = "black").place(x = 625, y = 80)
-Button(root, text=" ->", command=onClick_Increase, fg="red", bg = "black").place(x = 650, y = 80)
+def onClick_Decreaseday(event=None):
+    if day.get() >= 1:
+        day.set(day.get() - 1)
+
+month = int(strftime("%M"))
+def onClick_Increasemonth(event=None):
+    month.set(month.get() + 1)
+
+def onClick_Decreasemonth(event=None):
+    if month.get() >= 1:
+        month.set(month.get() - 1)
+
+year = int(strftime("%S"))
+def onClick_Increaseyear(event=None):
+    year.set(year.get() + 1)
+
+def onClick_Decreaseyear(event=None):
+    if year.get() >= 1:
+        year.set(year.get() - 1)
+
+Label(root, textvariable=day).place(x = 475, y = 55)
+#Label(root, text=month).place(x = 30, y = 55)
+#Label(root, text=year).place(x = 430, y = 55)
+#Label(root, textvariable=counter).place(x = 645, y = 55)
+#Button(root, text="<- ", command=onClick_Decrease, fg="red", bg = "black").place(x = 625, y = 80)
+#Button(root, text=" ->", command=onClick_Increase, fg="red", bg = "black").place(x = 650, y = 80)
+Button(root, text="v", command=onClick_Decreaseday).place(x = 500, y = 65, width = 13, height = 13)
+Button(root, text="^", command=onClick_Increaseday).place(x = 500, y = 55, width = 13, height = 13)
+Button(root, text="v", command=onClick_Decreasemonth).place(x = 550, y = 65, width = 13, height = 13)
+Button(root, text="^", command=onClick_Increasemonth).place(x = 550, y = 55, width = 13, height = 13)
+Button(root, text="v", command=onClick_Decreaseyear).place(x = 600, y = 65, width = 13, height = 13)
+Button(root, text="^", command=onClick_Increaseyear).place(x = 600, y = 55, width = 13, height = 13)
 
 #------------------------------------------------------------------------------------------------------#
 ''' Zone Blocks '''
