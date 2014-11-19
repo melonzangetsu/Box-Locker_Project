@@ -1,9 +1,11 @@
 ''' Box Locker '''
 from Tkinter import *
 import sys
+from time import *
 
 root = Tk()
 root.geometry("800x630")
+root.resizable(width=FALSE, height=FALSE)
 root.title("Box Locker")
 #------------------------------------------------------------------------------------------------------#
 ''' Zone LOGO PROGRAM '''
@@ -21,7 +23,6 @@ Label(root, text=strftime("Setting Time : ")).place(x = 390, y = 55)
 
 #------------------------------------------------------------------------------------------------------#
 ''' Button Skip '''
-''' Button Skip '''
 #counter = IntVar()
 #def onClick_Increase(event=None):
 #    counter.set(counter.get() + 1)
@@ -29,31 +30,33 @@ Label(root, text=strftime("Setting Time : ")).place(x = 390, y = 55)
 #    if counter.get() >= 1:
 #        counter.set(counter.get() - 1)
 
-day = int(strftime("%H"))
+day = IntVar()
+print type(day)
 def onClick_Increaseday(event=None):
-    day.set(day.get() + 1)
+        day.set(day.get() + 1)
 
 def onClick_Decreaseday(event=None):
-    if day.get() >= 1:
+    if day.get() > 1:
         day.set(day.get() - 1)
 
-month = int(strftime("%M"))
+month = IntVar()
 def onClick_Increasemonth(event=None):
-    month.set(month.get() + 1)
+        month.set(month.get() + 1)
 
 def onClick_Decreasemonth(event=None):
-    if month.get() >= 1:
+    if month.get() > 1:
         month.set(month.get() - 1)
 
-year = int(strftime("%S"))
+year = IntVar()
 def onClick_Increaseyear(event=None):
-    year.set(year.get() + 1)
+        year.set(year.get() + 1)
 
 def onClick_Decreaseyear(event=None):
-    if year.get() >= 1:
         year.set(year.get() - 1)
 
 Label(root, textvariable=day).place(x = 475, y = 55)
+Label(root, textvariable=month).place(x = 525, y = 55)
+Label(root, textvariable=year).place(x = 570, y = 55)
 #Label(root, text=month).place(x = 30, y = 55)
 #Label(root, text=year).place(x = 430, y = 55)
 #Label(root, textvariable=counter).place(x = 645, y = 55)
