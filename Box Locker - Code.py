@@ -4,6 +4,7 @@ import sys
 
 root = Tk()
 root.geometry("800x630")
+root.resizable(width=FALSE, height=FALSE)
 root.title("Box Locker")
 #------------------------------------------------------------------------------------------------------#
 ''' Zone LOGO PROGRAM '''
