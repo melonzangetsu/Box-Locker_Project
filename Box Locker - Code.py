@@ -20,6 +20,7 @@ date = strftime("%d")
 month = strftime("%B")
 year = strftime("%Y")
 Label(root, text=strftime('Today is %A %d %B %Y')).place(x = 100, y = 55)
+Label(root, text=strftime('You open program at %H:%M')).place(x = 100, y = 75)
 
 #------------------------------------------------------------------------------------------------------#
 ''' Button Skip '''
