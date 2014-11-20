@@ -37,7 +37,6 @@ update_timeText()
 day = IntVar()
 def onClick_Increaseday(event=None):
         day.set(day.get() + 1)
-
 def onClick_Decreaseday(event=None):
     if day.get() > 1:
         day.set(day.get() - 1)
