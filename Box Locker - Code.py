@@ -1,9 +1,11 @@
 ''' Box Locker '''
 from Tkinter import *
 import sys
+from time import *
 
 root = Tk()
 root.geometry("800x630")
+root.resizable(width=FALSE, height=FALSE)
 root.title("Box Locker")
 #------------------------------------------------------------------------------------------------------#
 ''' Zone LOGO PROGRAM '''
@@ -15,23 +17,55 @@ label.place(x = 350, y = 5)
 
 #------------------------------------------------------------------------------------------------------#
 ''' Zone Menu '''
+Label(root, text=strftime('Today : %A %d %B %Y')).place(x = 100, y = 55)
+Label(root, text=strftime("Setting Time : ")).place(x = 390, y = 55)
 
-
-
+def update_timeText():
+    # Get the current time, note you can change the format as you wish
+    current = strftime("Now time : %H : %M : %S")
+    # Update the timeText Label box with the current time
+    time.config(text=current)
+    # Call the update_timeText() function after 1 second
+    root.after(1000, update_timeText)
+# Create a timeText Label (a text box)
+time = Label(root)
+time.pack(anchor=W, pady=90, padx=100)
+update_timeText()
 
 #------------------------------------------------------------------------------------------------------#
 ''' Button Skip '''
-counter = IntVar()
-def onClick_Increase(event=None):
-    counter.set(counter.get() + 1)
+day = IntVar()
+def onClick_Increaseday(event=None):
+        day.set(day.get() + 1)
 
-def onClick_Decrease(event=None):
-    if counter.get() >= 1:
-        counter.set(counter.get() - 1)
+def onClick_Decreaseday(event=None):
+    if day.get() > 1:
+        day.set(day.get() - 1)
 
-Label(root, textvariable=counter).place(x = 645, y = 55)
-Button(root, text="<- ", command=onClick_Decrease, fg="red", bg = "black").place(x = 625, y = 80)
-Button(root, text=" ->", command=onClick_Increase, fg="red", bg = "black").place(x = 650, y = 80)
+month = IntVar()
+def onClick_Increasemonth(event=None):
+        month.set(month.get() + 1)
+
+def onClick_Decreasemonth(event=None):
+    if month.get() > 1:
+        month.set(month.get() - 1)
+
+year = IntVar()
+def onClick_Increaseyear(event=None):
+        year.set(year.get() + 1)
+
+def onClick_Decreaseyear(event=None):
+        year.set(year.get() - 1)
+
+Label(root, textvariable=day).place(x = 475, y = 55)
+Label(root, textvariable=month).place(x = 525, y = 55)
+Label(root, textvariable=year).place(x = 570, y = 55)
+Button(root, text="v", command=onClick_Decreaseday, fg="yellow", bg = "black").place(x = 500, y = 65, width = 12, height = 12)
+Button(root, text="^", command=onClick_Increaseday, fg="yellow", bg = "black").place(x = 500, y = 54, width = 12, height = 12)
+Button(root, text="v", command=onClick_Decreasemonth, fg="yellow", bg = "black").place(x = 550, y = 65, width = 12, height = 12)
+Button(root, text="^", command=onClick_Increasemonth, fg="yellow", bg = "black").place(x = 550, y = 54, width = 12, height = 12)
+Button(root, text="v", command=onClick_Decreaseyear, fg="yellow", bg = "black").place(x = 600, y = 65, width = 12, height = 12)
+Button(root, text="^", command=onClick_Increaseyear, fg="yellow", bg = "black").place(x = 600, y = 54, width = 12, height = 12)
 
 #------------------------------------------------------------------------------------------------------#
 ''' Zone Blocks '''
