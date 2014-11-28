@@ -62,6 +62,24 @@ class Frame(object):
                 block += 1
 
         self.root.mainloop()
+        
+    def box1(self):
+        Box1()
+
+    def box2(self):
+        Box1()
+
+    def box3(self):
+        Box1()
+
+    def box4(self):
+        Box1()
+
+    def box5(self):
+        Box1()
+
+    def box6(self):
+        Box1()
 
 #--------------------------------------------------------------------------------------------------
 if __name__ == '__main__':
