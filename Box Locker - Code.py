@@ -81,6 +81,13 @@ class Frame(object):
     def box6(self):
         Box1()
 
+class Box1(object):
+    def __init__(self):
+        self.box = Tk()
+        self.box.geometry("400x230")
+        self.box.resizable(width=FALSE, height=FALSE)
+        self.box.title("Box Locker")
+
 #--------------------------------------------------------------------------------------------------
 if __name__ == '__main__':
     Frame()
