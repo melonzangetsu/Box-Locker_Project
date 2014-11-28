@@ -57,11 +57,25 @@ class Frame(object):
             down += 80
             right = 0
             for j in xrange(10):
-                Button(self.root, text = block).place(x = right, y = down, width = 80, height = 80)
+                self.call = 'box'+str(block)
+                Button(self.root, text = block, command = self.box1).place(x = right, y = down, width = 80, height = 80)
                 right += 80
                 block += 1
 
         self.root.mainloop()
+        
+    def box1(self):
+        Box1()
+
+    def box2(self):
+        Box1()
+
+class Box1(object):
+    def __init__(self):
+        self.box = Tk()
+        self.box.geometry("400x230")
+        self.box.resizable(width=FALSE, height=FALSE)
+        self.box.title("Box Locker")
 
 #--------------------------------------------------------------------------------------------------
 if __name__ == '__main__':
