@@ -3,10 +3,10 @@ Box-Locker_Project
 Project PSIT @ IT KMITL
 ========================
   Box-Locker is Program about checkup hiring Locker.For all locker (60 block)
-  - If some locker(block) hired then in that locker will keep detail about Name, Number of days to hire.(Max 5 day)
+  - If some locker(block) hired. We will keep detail about Name, Number of days to hire.(Max 5 day)
   - If hire for 2 Day(Time left 3 Day). This color of box will be orange.
-    else if hire for 3 Day(Time left 2 Day). This color of box will be yellow.
-    else if hire for 4 Day(Time left 1 Day). This color of box will be red.
+  - If hire for 3 Day(Time left 2 Day). This color of box will be yellow.
+  - If hire for 4 Day(Time left 1 Day). This color of box will be red.
 
   **Note 
     - Reference time from your computer.
