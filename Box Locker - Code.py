@@ -50,43 +50,38 @@ class Frame(object):
         Button(self.root, text="v", command=onClick_Decreaseyear, fg="yellow", bg = "black").place(x = 600, y = 65, width = 12, height = 12)
         Button(self.root, text="^", command=onClick_Increaseyear, fg="yellow", bg = "black").place(x = 600, y = 54, width = 12, height = 12)
 
-        block = 1
+        number = []
+        for i in xrange(1, 61):
+            number.append(str(i))
+            
+        block = 0
         right = 0
         down = 65
         for i in xrange(6):
+            box = number[block]
             down += 80
             right = 0
             for j in xrange(10):
-                Button(self.root, text = block).place(x = right, y = down, width = 80, height = 80)
+                button_value = Button(self.root, text = block+1, command = lambda block=block : self.clickBox(block+1))
+                button_value.place(x = right, y = down, width = 80, height = 80)
                 right += 80
                 block += 1
 
         self.root.mainloop()
+
         
-    def box1(self):
-        Box1()
+    def clickBox(self, number):
+        #print number
+        Box(number)
 
-    def box2(self):
-        Box1()
-
-    def box3(self):
-        Box1()
-
-    def box4(self):
-        Box1()
-
-    def box5(self):
-        Box1()
-
-    def box6(self):
-        Box1()
-
-class Box1(object):
-    def __init__(self):
+class Box(object):
+    def __init__(self, value):
         self.box = Tk()
         self.box.geometry("400x230")
         self.box.resizable(width=FALSE, height=FALSE)
-        self.box.title("Box Locker")
+        self.box.title("Box Locker : " + str(value))
+        Label(self.box, text = "Box : " + str(value)).place(x = 200, y = 35, anchor = CENTER)
+        self.box.mainloop()
 
 #--------------------------------------------------------------------------------------------------
 if __name__ == '__main__':
