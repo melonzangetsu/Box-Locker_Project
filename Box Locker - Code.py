@@ -14,7 +14,7 @@ class Frame(object):
         self.label.image = self.photo # keep a reference!
         self.label.place(x = 350, y = 5)
         Label(self.root, text=strftime('Today : %A %d %B %Y')).place(x = 100, y = 55)
-
+        '''
         day = IntVar()
         month = IntVar()
         year = IntVar()
@@ -39,16 +39,15 @@ class Frame(object):
         def onClick_Decreaseyear(event=None):
             if year.get() > 0:
                 year.set(year.get() - 1)
-
-        Label(self.root, textvariable=day).place(x = 475, y = 55)
-        Label(self.root, textvariable=month).place(x = 525, y = 55)
-        Label(self.root, textvariable=year).place(x = 570, y = 55)
-        Button(self.root, text="v", command=onClick_Decreaseday, fg="yellow", bg = "black").place(x = 500, y = 65, width = 12, height = 12)
-        Button(self.root, text="^", command=onClick_Increaseday, fg="yellow", bg = "black").place(x = 500, y = 54, width = 12, height = 12)
-        Button(self.root, text="v", command=onClick_Decreasemonth, fg="yellow", bg = "black").place(x = 550, y = 65, width = 12, height = 12)
-        Button(self.root, text="^", command=onClick_Increasemonth, fg="yellow", bg = "black").place(x = 550, y = 54, width = 12, height = 12)
-        Button(self.root, text="v", command=onClick_Decreaseyear, fg="yellow", bg = "black").place(x = 600, y = 65, width = 12, height = 12)
-        Button(self.root, text="^", command=onClick_Increaseyear, fg="yellow", bg = "black").place(x = 600, y = 54, width = 12, height = 12)
+        '''
+        Label(self.root, text="SKIP DAY").place(x = 475, y = 55)
+        skipDay = Spinbox(self.root, from_=0, to=31).place(x = 535, y = 55, width = 35)
+##        Button(self.root, text="v", command=onClick_Decreaseday, fg="yellow", bg = "black").place(x = 500, y = 65, width = 12, height = 12)
+##        Button(self.root, text="^", command=onClick_Increaseday, fg="yellow", bg = "black").place(x = 500, y = 54, width = 12, height = 12)
+##        Button(self.root, text="v", command=onClick_Decreasemonth, fg="yellow", bg = "black").place(x = 550, y = 65, width = 12, height = 12)
+##        Button(self.root, text="^", command=onClick_Increasemonth, fg="yellow", bg = "black").place(x = 550, y = 54, width = 12, height = 12)
+##        Button(self.root, text="v", command=onClick_Decreaseyear, fg="yellow", bg = "black").place(x = 600, y = 65, width = 12, height = 12)
+##        Button(self.root, text="^", command=onClick_Increaseyear, fg="yellow", bg = "black").place(x = 600, y = 54, width = 12, height = 12)
 
         number = []
         for i in xrange(1, 61):
@@ -68,7 +67,6 @@ class Frame(object):
                 block += 1
 
         self.root.mainloop()
-
         
     def clickBox(self, number):
         #print number
